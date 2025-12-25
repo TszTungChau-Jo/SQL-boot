@@ -54,9 +54,62 @@ and focus the filtering on a single person
 * Question: How many people's name start with A and end with R?
 * Expected output: 1846
 */
-SELECT count(emp_no)
-FROM employees
-WHERE first_name LIKE 'A%r';
+-- select count(emp_no)
+-- from employees
+-- where first_name like 'A%r';
+
+
+
+/*
+* DB: Employees
+* Table: employees
+* Question: Get me all the employees above 60, use the appropriate date functions
+*/
+
+-- SELECT AGE(birth_date), * FROM public.employees
+-- WHERE (
+--     EXTRACT (YEAR FROM AGE(birth_date))
+-- ) > 60;
+-- 
+
+
+/*
+* DB: Employees
+* Table: employees
+* Question: How many employees were hired in February?
+*/
+
+--SELECT * FROM employees
+-- SELECT count(emp_no) FROM employees
+-- where (
+--     EXTRACT (MONTH FROM hire_date) = 2
+-- );
+
+
+/*
+* DB: Employees
+* Table: employees
+* Question: How many employees were born in november?
+*/
+
+--SELECT * FROM employees
+-- SELECT count(emp_no) FROM employees
+-- where (
+--     EXTRACT (MONTH FROM birth_date) = 11
+-- );
+-- 
+
+/*
+* DB: Employees
+* Table: employees
+* Question: Who is the oldest employee? (Use the analytical function MAX)
+*/
+
+--SELECT MAX(AGE(birth_date)) FROM employees;
+
+
+
+
 
 
 
