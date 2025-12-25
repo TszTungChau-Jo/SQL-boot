@@ -10,4 +10,15 @@ FROM public.country;
 -- What is the average population for cities in the netherlands?
 SELECT avg("population")
 FROM public.city
-WHERE "countrycode" = 'NLD'
+WHERE "countrycode" = 'NLD';
+
+/*
+* DB: World
+* Table: city
+* Question: How many cities are in the district of Zuid-Holland, Noord-Brabant and Utrecht?
+*/
+SELECT COUNT(id)
+FROM city
+WHERE district IN ('Zuid-Holland', 'Noord-Brabant', 'Utrecht');
+
+
