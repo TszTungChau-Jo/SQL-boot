@@ -131,10 +131,32 @@ and income > 50000;
 * Question: How many orders were made in January 2004?
 */
 
-SELECT count(orderid) 
-FROM orders
-WHERE DATE_TRUNC('month', orderdate) = date '2004-01-01';
+-- SELECT count(orderid) 
+-- FROM orders
+-- where DATE_TRUNC('month', orderdate) = date '2004-01-01';
 
+
+/*
+* DB: Store
+* Table: orders
+* Question: Get all orders from customers who live in Ohio (OH), New York (NY) or Oregon (OR) state
+* ordered by orderid
+*/
+
+-- select c.firstname, c.lastname, o.orderid
+-- from orders as o  
+-- inner join customers as c USING(customerid) -- ON o.customerid = c.customerid
+-- order by o.orderid asc;
+
+
+/*
+* DB: Store
+* Table: products
+* Question: Show me the inventory for each product
+*/
+SELECT p.prod_id, p.title, i.quan_in_stock 
+FROM products AS p 
+INNER JOIN inventory AS i ON p.prod_id = i.prod_id;
 
 
 
